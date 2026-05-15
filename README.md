@@ -3,7 +3,7 @@
 A full-stack job board web application where users can register, login, browse job listings, and apply for jobs.
 
 ## 🔗 Live Demo
-[https://cheerful-charisma-production-6d68.up.railway.app](https://cheerful-charisma-production-6d68.up.railway.app)
+https://workbridge.up.railway.app/login
 
 ## 🛠️ Tech Stack
 - **Frontend:** React.js, Redux, React Router DOM, CSS
