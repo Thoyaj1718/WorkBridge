@@ -1,11 +1,15 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const JWT_SECRET = 'workbridge_secret_key';
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -75,6 +79,43 @@ app.post('/api/applications', (req, res) => {
       return;
     }
     res.json({ message: 'Application submitted successfully!' });
+  });
+});
+
+// Register
+app.post('/api/register', async (req, res) => {
+  const { name, email, password, role } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const query = `
+    INSERT INTO users (name, email, password, role)
+    VALUES (?, ?, ?, ?)
+  `;
+  db.query(query, [name, email, hashedPassword, role], (err, results) => {
+    if (err) {
+      res.status(400).json({ error: 'Email already exists' });
+      return;
+    }
+    res.json({ message: 'Account created successfully!' });
+  });
+});
+
+// Login
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+  const query = `SELECT * FROM users WHERE name = ?`;
+  db.query(query, [username], async (err, results) => {
+    if (err || results.length === 0) {
+      res.status(400).json({ error_msg: 'Invalid username or password' });
+      return;
+    }
+    const user = results[0];
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      res.status(400).json({ error_msg: 'Invalid username or password' });
+      return;
+    }
+    const jwt_token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '30d' });
+    res.json({ jwt_token });
   });
 });
 

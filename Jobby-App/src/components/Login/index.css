@@ -23,11 +23,11 @@
   }
 }
 
-.WorkBridge-logo {
+.workbridge-logo {
   height: 20px;
   width: 100%;
   align-self: left;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .label-text {
@@ -69,4 +69,26 @@
   font-size: 12px;
   margin-top: 4px;
   margin-left: 4px;
+}
+
+.success-msg {
+  color: #00d084;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.toggle-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #6366f1;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
