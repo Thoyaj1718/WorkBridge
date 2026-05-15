@@ -24,9 +24,9 @@
 }
 
 .workbridge-logo {
-  height: 20px;
-  width: 100%;
-  align-self: left;
+  height: 60px;
+  width: auto;
+  align-self: flex-start;
   margin-bottom: 30px;
 }
 
