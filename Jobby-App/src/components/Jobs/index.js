@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
 import Loader from 'react-loader-spinner'
 
@@ -7,7 +6,6 @@ import Header from '../Header'
 import ProfileDetails from '../ProfileDetails'
 import FiltersGroup from '../FiltersGroup'
 import JobCard from '../JobCard'
-import Cookies from 'js-cookie'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
