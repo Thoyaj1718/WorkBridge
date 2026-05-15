@@ -1,0 +1,72 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.login-form {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #2c364c;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+@media (min-width: 768px) {
+  .login-form {
+    width: 30vw;
+    padding: 40px;
+  }
+}
+
+.WorkBridge-logo {
+  height: 20px;
+  width: 100%;
+  align-self: left;
+  margin-bottom: 5px;
+}
+
+.label-text {
+  color: #cbd5e1;
+  font-family: Roboto;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-container {
+  border-radius: 5px;
+  padding: 12px;
+  color: #cbd5e1;
+  font-family: Roboto;
+  margin-bottom: 15px;
+  border: 1px solid #64748b;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-btn {
+  color: #ffffff;
+  background-color: #4f46e5;
+  font-family: Roboto;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: #ff0b37;
+  font-family: Roboto;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 4px;
+}

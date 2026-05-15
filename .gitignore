@@ -1,0 +1,4 @@
+node_modules
+jobboard-api/node_modules
+Jobby-App/node_modules
+jobboard-api/.env
