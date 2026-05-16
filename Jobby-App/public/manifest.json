@@ -1,19 +1,19 @@
 {
-  "short_name": "app_short_name",
-  "name": "App_name",
+  "short_name": "WorkBridge",
+  "name": "WorkBridge Job Board",
   "icons": [
     {
-      "src": "/img/Logo.png",
+      "src": "/img/WorkBridge2.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/img/Logo.png",
+      "src": "/img/WorkBridge2.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/Logo.png",
+      "src": "/img/WorkBridge2.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,5 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#2c364c"
 }
