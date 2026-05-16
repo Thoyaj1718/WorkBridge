@@ -22,13 +22,27 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
-db.connect((err) => {
-  if (err) {
-    console.log('Database connection failed:', err);
-    return;
-  }
-  console.log('MySQL Connected!');
-});
+const connectDB = () => {
+  db.connect((err) => {
+    if (err) {
+      console.log('Database connection failed, retrying in 5s...', err);
+      setTimeout(connectDB, 5000);
+      return;
+    }
+    console.log('MySQL Connected!');
+  });
+
+  db.on('error', (err) => {
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      console.log('DB connection lost, reconnecting...');
+      connectDB();
+    } else {
+      throw err;
+    }
+  });
+}
+
+connectDB();
 
 app.get('/', (req, res) => {
   res.send('Job Board API is running!');
