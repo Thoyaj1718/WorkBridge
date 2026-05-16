@@ -18,7 +18,7 @@ class Login extends Component {
   onChangeUsername = event => this.setState({username: event.target.value})
 
   onChangePassword = event => this.setState({password: event.target.value})
-  
+
   onChangeEmail = event => this.setState({email: event.target.value})
 
   onSubmitSuccess = jwtToken => {
