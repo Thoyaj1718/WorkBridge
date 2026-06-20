@@ -14,6 +14,7 @@ const JobCard = props => {
     packagePerAnnum,
     rating,
     title,
+    company,
     id,
   } = jobDetails
   return (
@@ -27,6 +28,7 @@ const JobCard = props => {
           />
           <div className="title-rating-container-card">
             <h1 className="job-title-card">{title}</h1>
+            <p className="company-name-text">{company}</p>
             <div className="rating-container-card">
               <AiFillStar className="star-icon-card" />
               <p className="rating-number-card">{rating}</p>
