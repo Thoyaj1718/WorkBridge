@@ -24,10 +24,12 @@
 }
 
 .workbridge-logo {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+  max-width: 100%;
+  width: auto;
+  height: 50px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto 15px auto;
 }
 
 .label-text {
