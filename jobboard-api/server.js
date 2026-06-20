@@ -15,34 +15,24 @@ app.use(express.json());
 
 const JWT_SECRET = 'workbridge_secret_key';
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-const connectDB = () => {
-  db.connect((err) => {
-    if (err) {
-      console.log('Database connection failed, retrying in 5s...', err);
-      setTimeout(connectDB, 5000);
-      return;
-    }
+db.getConnection((err, connection) => {
+  if (err) {
+    console.log('Database connection failed:', err);
+  } else {
     console.log('MySQL Connected!');
-  });
-
-  db.on('error', (err) => {
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-      console.log('DB connection lost, reconnecting...');
-      connectDB();
-    } else {
-      throw err;
-    }
-  });
-}
-
-connectDB();
+    connection.release();
+  }
+});
 
 app.get('/', (req, res) => {
   res.send('Job Board API is running!');
