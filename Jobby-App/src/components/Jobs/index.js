@@ -68,7 +68,7 @@ class Jobs extends Component {
     const {activeSalaryRangeId, employmentTypesChecked, searchInput} = this.state
     const employTypes = employmentTypesChecked.join(',')
 
-    const apiUrl = `https://workbridge-production-2832.up.railway.app/api/jobs?employment_type=${employTypes}&minimum_package=${activeSalaryRangeId}&search=${searchInput}`
+    const apiUrl = `https://workbridge-backend-munl.onrender.com/api/jobs?employment_type=${employTypes}&minimum_package=${activeSalaryRangeId}&search=${searchInput}`
 
     const response = await fetch(apiUrl)
     const data = await response.json()

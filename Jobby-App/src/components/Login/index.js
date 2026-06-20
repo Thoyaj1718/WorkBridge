@@ -35,7 +35,7 @@ class Login extends Component {
   onLogin = async event => {
     event.preventDefault()
     const {username, password} = this.state
-    const apiUrl = 'https://workbridge-production-2832.up.railway.app/api/login'
+    const apiUrl = 'https://workbridge-backend-munl.onrender.com/api/login'
     const options = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -53,7 +53,7 @@ class Login extends Component {
   onSignup = async event => {
     event.preventDefault()
     const {username, password, email} = this.state
-    const apiUrl = 'https://workbridge-production-2832.up.railway.app/api/register'
+    const apiUrl = 'https://workbridge-backend-munl.onrender.com/api/register'
     const options = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
