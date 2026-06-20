@@ -110,7 +110,8 @@ app.post('/api/register', async (req, res) => {
   `;
   db.query(query, [name, email, hashedPassword, role], (err, results) => {
     if (err) {
-      res.status(400).json({ error: 'Email already exists' });
+      console.log('REGISTER ERROR:', err);
+      res.status(400).json({ error: err.message });
       return;
     }
     res.json({ message: 'Account created successfully!' });
