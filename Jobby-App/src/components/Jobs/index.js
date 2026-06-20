@@ -75,7 +75,7 @@ class Jobs extends Component {
 
     if (response.ok === true) {
       const updatedData = data.map(eachJob => ({
-        companyLogoUrl: '',
+        companyLogoUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
         employmentType: eachJob.job_type,
         id: eachJob.id,
         jobDescription: eachJob.description,
@@ -99,7 +99,7 @@ class Jobs extends Component {
 
     const updatedData = {
       name: 'Thoyaj Kumar',
-      profileImageUrl: 'https://assets.ccbp.in/frontend/react-js/male-avatar-img.png',
+      profileImageUrl: '/img/Nani.jpeg',
       shortBio: 'Full Stack Developer',
     }
     this.setState({
