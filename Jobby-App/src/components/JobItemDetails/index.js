@@ -99,6 +99,13 @@ class JobItemDetails extends Component {
     return (
       <div className="job-details-content-container">
         <div className="job-details">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="company logo"
+            className="company-logo-card"
+            style={{width: '60px', height: '60px', marginBottom: '10px'}}
+          />
+
           <div className="title-rating-container-card">
             <h1 className="job-title-card">{title}</h1>
             <div className="rating-container-card">
